@@ -1,5 +1,5 @@
 {% set name = "pyobjc-framework-webkit" %}
-{% set version = "9.2" %}
+{% set version = "10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/pyobjc-framework-WebKit/pyobjc-framework-WebKit-{{ version }}.tar.gz
-  sha256: 86761cba8c18c3d2ecbd3ca7ab8b92c8b2eae8514741ec63527b536b671ab296
+  sha256: 847a69aeeb2e743c5ff838628f3a0031e538de4e011e29df52272955ed0b11df
 
 build:
   script:
@@ -17,7 +17,7 @@ build:
     - export CFLAGS="${CFLAGS} -Wno-unused-command-line-argument"  # [py == 37 or py == 38]
     - {{ PYTHON }} -m pip install --no-deps . -vv
   skip: true  # [not osx or py2k or python_impl == 'pypy' or (arm64 and py < 39)]
-  number: 2
+  number: 0
 
 requirements:
   build:
