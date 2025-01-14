@@ -1,13 +1,13 @@
 {% set name = "pyobjc-framework-webkit" %}
-{% set version = "10.2" %}
+{% set version = "11.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/pyobjc-framework-WebKit/pyobjc-framework-WebKit-{{ version }}.tar.gz
-  sha256: 3717104dbc901a1bd46d97886c5adb6eb32798ff4451c4544e04740e41706083
+  url: https://pypi.org/packages/source/{{ name[0] }}/pyobjc-framework-WebKit/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: fa6bedf9873786b3376a74ce2ea9dcd311f2a80f61e33dcbd931cc956aa29644
 
 build:
   script:
@@ -22,6 +22,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
