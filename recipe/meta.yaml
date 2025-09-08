@@ -1,5 +1,5 @@
 {% set name = "pyobjc-framework-webkit" %}
-{% set version = "10.3.2" %}
+{% set version = "11.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/pyobjc-framework-WebKit/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: b60d097a87867c252286855158cc35d991e2273f162f40f8e38e95153894bbbf
+  sha256: 27e701c7aaf4f24fc7e601a128e2ef14f2773f4ab071b9db7438dc5afb5053ae
 
 build:
   script:
